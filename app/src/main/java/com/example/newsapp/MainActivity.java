@@ -47,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
     public void loadJson(){
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
-        String country = Utils.getCountry();
+        //String country = Utils.getCountry();
+        String q = "+(technology OR computer science OR hacking OR cyber security OR programming)";
 
         Call<News> call;
-        call = apiInterface.getNews(country, API_KEY);
+        call = apiInterface.getNews(q, API_KEY);
 
         call.enqueue(new Callback<News>() {
             @Override
