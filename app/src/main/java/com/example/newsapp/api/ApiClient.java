@@ -19,7 +19,6 @@ public class ApiClient {
     public static Retrofit retrofit;
 
     public static Retrofit getApiClient(){
-
         if (retrofit == null){
             retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
                     .client(getUnsafeOKHttpClient().build())
